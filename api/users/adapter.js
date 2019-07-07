@@ -1,0 +1,113 @@
+exports.login = async ({
+  params,
+  repository,
+  formatters,
+  taskRunner,
+  validators,
+  logger,
+  onSuccess,
+  onError,
+}) => {
+  try {
+    logger.info('Logging with user', params.email);
+
+    const user = await repository.find(params);
+
+    taskRunner.addTasks([
+      validators.hasUser({ user }),
+    ]);
+
+    const resultRunner = await taskRunner.exec();
+
+    if (resultRunner && resultRunner.error) {
+      return onError({
+        message: resultRunner.message,
+        statusCode: 401,
+      });
+    }
+
+    logger.info('Updating the lastLogin time');
+
+    await repository.updateLastLoginTime(user.id);
+
+    return onSuccess({ data: formatters.response(user) });
+  } catch (error) {
+    logger.error(error);
+    return onError(error);
+  }
+};
+
+exports.create = async ({
+  payload,
+  repository,
+  formatters,
+  taskRunner,
+  validators,
+  logger,
+  onSuccess,
+  onError,
+}) => {
+  try {
+    logger.info('Creating user with', payload);
+
+    const responseDB = await repository.save(formatters.payload(payload));
+
+    taskRunner.addTasks([
+      validators.duplicatedEmail({ responseDB }),
+    ]);
+
+    const resultRunner = await taskRunner.exec();
+
+    if (resultRunner && resultRunner.error) {
+      return onError({
+        message: resultRunner.message,
+        statusCode: 400,
+      });
+    }
+    console.log('formatters.response(responseDB)', formatters.response(responseDB))
+    return onSuccess({
+      data: formatters.response(responseDB),
+      statusCode: 201,
+    });
+  } catch (error) {
+    logger.error(error);
+    return onError(error);
+  }
+};
+
+exports.find = async ({
+  params,
+  repository,
+  formatters,
+  taskRunner,
+  validators,
+  logger,
+  onSuccess,
+  onError,
+}) => {
+  try {
+    logger.info('Finding user by', params);
+
+    const user = await repository.findByID({ id: params.id });
+
+    taskRunner.addTasks([
+      validators.hasUser({ user }),
+      validators.isValidToken({ user, paramsToken: params.token }),
+      validators.isValidSession({ user }),
+    ]);
+
+    const resultRunner = await taskRunner.exec();
+
+    if (resultRunner && resultRunner.error) {
+      return onError({
+        message: resultRunner.message,
+        status: 401,
+      });
+    }
+
+    return onSuccess({ data: formatters.response(user), statusCode: 200 });
+  } catch (error) {
+    logger.error(error);
+    return onError(error);
+  }
+};
