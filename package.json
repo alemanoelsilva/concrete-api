@@ -12,8 +12,7 @@
     "test": "npm run lint && npm run test:coverage",
     "lint": "eslint *.js .",
     "lint:fix": "eslint --fix *.js .",
-    "deploy": "npm test && git add . && git commit -m 'deploying' && git push origin master",
-    "deployTest": "./deploy.sh",
+    "deploy": "npm test && git add . && git commit -m 'Deploying on Heroku' && git push origin master",
     "build": "webpack"
   },
   "author": "Alexandre Manoel da Silva",
