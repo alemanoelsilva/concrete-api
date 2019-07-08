@@ -4,15 +4,16 @@
   "description": "API for Concrete Challenge",
   "main": "server.js",
   "scripts": {
-    "start": "npm run lint && node server.js",
+    "start": "node server.js",
     "dev": "node server.js",
     "test:coverage": "NODE_ENV=test jest --silent --runInBand --coverage --forceExit ./test/**/*.spec.js",
     "test:unit": "NODE_ENV=test jest --coverage --runInBand --forceExit ./test/unit/*.spec.js",
     "test:integration": "NODE_ENV=test jest --runInBand --coverage --forceExit ./test/integration/*.spec.js",
-    "test": "npm run test:coverage",
+    "test": "npm run lint && npm run test:coverage",
     "lint": "eslint *.js .",
     "lint:fix": "eslint --fix *.js .",
-    "build": "npm test && git add . && git commit -m 'deploying' && git push origin master"
+    "deploy": "npm test && git add . && git commit -m 'deploying' && git push origin master",
+    "build": "npm i && npm start"
   },
   "author": "Alexandre Manoel da Silva",
   "license": "ISC",
