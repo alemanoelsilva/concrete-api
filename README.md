@@ -1,6 +1,10 @@
 # Configuration
 
-## To initialize the application. 
+## To see the Blueprint of endpoints
+
+Go to [Blueprint](./api/users/blueprint.md)
+
+## To initialize the application
 
 ### Create `.env` file 
 

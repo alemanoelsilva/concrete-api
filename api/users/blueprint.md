@@ -4,7 +4,7 @@ FORMAT: 1A
 
 This is API for manipulation of Users
 
-## User Collection [/api/users/signup]
+## User Collection [/api/signup]
 
 ### User Sign Up [POST]
 
@@ -70,7 +70,7 @@ This is API for manipulation of Users
             "token": "419d1c0f-cd8a-47ea-a9ea-2665043189e7"
           }
 
-## User Collection [/api/users/signin]
+## User Collection [/api/signin]
 
 ### User Login [GET]
 
