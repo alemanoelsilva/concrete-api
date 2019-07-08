@@ -12,7 +12,7 @@
     "test": "npm run test:coverage",
     "lint": "eslint *.js .",
     "lint:fix": "eslint --fix *.js .",
-    "build": "NODE_ENV=prod"
+    "build": "npm test && git add . && git commit -m 'deploying' && git push origin master"
   },
   "author": "Alexandre Manoel da Silva",
   "license": "ISC",
