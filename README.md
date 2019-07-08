@@ -41,5 +41,5 @@ npm run test:integration
 ### Making the build on Heroku
 
 ```shell
-npm run build
+npm run deploy
 ```
