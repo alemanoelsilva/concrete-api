@@ -1,5 +1,5 @@
 const {
-  requestGet,
+  requestPost,
 } = require('../helpers');
 
 const SIGNIN_URL = '/api/signin';
@@ -16,9 +16,9 @@ describe('Login User - Sign in Integration Test', () => {
   describe('Try to do login', () => {
     test('Should return statusCode 200 - user logged', async () => {
       try {
-        const { body, statusCode } = await requestGet({
+        const { body, statusCode } = await requestPost({
           url: SIGNIN_URL,
-          query: {
+          body: {
             email: userMockOnDB.email,
             password: userMockOnDB.password,
           },
@@ -37,9 +37,9 @@ describe('Login User - Sign in Integration Test', () => {
 
     test('Should return statusCode 401 - user email and/or password invalid', async () => {
       try {
-        const { body, statusCode } = await requestGet({
+        const { body, statusCode } = await requestPost({
           url: SIGNIN_URL,
-          query: {
+          body: {
             email: 'email_is_not_valid@gmail.com',
             password: 'password_is_not_valid123',
           },

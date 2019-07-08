@@ -27,7 +27,7 @@ const formatDate = 'MMMM Do YYYY, h:mm:ss a';
 
 module.exports = ({
   signIn: (request, response) => adapter.login({
-    params: request.query,
+    body: request.body,
     repository: {
       find: repository.find,
       updateLastLoginTime: repository.update,

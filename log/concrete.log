@@ -62,3 +62,17 @@
 {"name":"concreteAPI","hostname":"ales-pro.local","pid":33528,"level":30,"msg":"Connecting on database db/database.db","time":"2019-07-08T05:43:50.261Z","v":0}
 {"name":"concreteAPI","hostname":"ales-pro.local","pid":33528,"level":30,"msg":"Database connected","time":"2019-07-08T05:43:50.407Z","v":0}
 {"name":"concreteAPI","hostname":"ales-pro.local","pid":33528,"level":30,"msg":"Application is running on port 3000","time":"2019-07-08T05:43:50.610Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":35117,"level":30,"msg":"Connecting on database db/database.db","time":"2019-07-08T20:46:24.952Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":35117,"level":30,"msg":"Database connected","time":"2019-07-08T20:46:25.046Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":35117,"level":30,"msg":"Application is running on port 3000","time":"2019-07-08T20:46:25.189Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":35117,"level":30,"msg":"Logging with user email@gmail.com","time":"2019-07-08T20:47:28.153Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":35117,"level":30,"msg":"User was not found","time":"2019-07-08T20:47:28.175Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":35117,"level":30,"msg":"Creating user with { name: 'Alexandre',\n  email: 'sem naitl@gmail.com',\n  password:\n   'e0164271adb0e8fbc41239ebc6dddf0bd9b9ae7ad4904e77ff2ea67acd433791',\n  phones: [ { number: 123123, ddd: 33 }, { number: 123123, ddd: 23 } ] }","time":"2019-07-08T20:47:55.147Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":35117,"level":30,"msg":"Logging with user sem naitl@gmail.com","time":"2019-07-08T20:48:16.002Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":35117,"level":30,"msg":"Updating the lastLogin time","time":"2019-07-08T20:48:16.007Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":35117,"level":30,"msg":"Logging with user sem naitl@gmail.com","time":"2019-07-08T20:48:22.626Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":35117,"level":30,"msg":"User was not found","time":"2019-07-08T20:48:22.631Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":35117,"level":30,"msg":"Logging with user sem naitl@gmail.com","time":"2019-07-08T20:48:32.253Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":35117,"level":30,"msg":"Updating the lastLogin time","time":"2019-07-08T20:48:32.258Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":35117,"level":30,"msg":"Finding user by { id: 'dd8cb64f-1738-4496-abd2-4e0ed5c21933',\n  token: '259c9f59-5188-47dc-b682-5dfe7071be57' }","time":"2019-07-08T20:49:00.830Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":35117,"level":30,"msg":"Finding user by { id: 'dd8cb64f-1738-4496-abd2-4e0ed5c21933',\n  token: '259c9f59-5188-47dc-b682-5dfe7071be57' }","time":"2019-07-08T20:49:02.431Z","v":0}

@@ -72,13 +72,13 @@ This is API for manipulation of Users
 
 ## User Collection [/api/signin]
 
-### User Login [GET]
+### User Login [POST]
 
 - Request
 
-  - Parameters
-    - name (string) - User name
+  - Attributes (object)
     - email (string) - User e-mail
+    - password (string) - User password
 
 - Response 200
 

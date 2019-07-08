@@ -1,5 +1,5 @@
 exports.login = async ({
-  params,
+  body,
   repository,
   formatters,
   taskRunner,
@@ -9,9 +9,9 @@ exports.login = async ({
   onError,
 }) => {
   try {
-    logger.info('Logging with user', params.email);
+    logger.info('Logging with user', body.email);
 
-    const user = await repository.find(params);
+    const user = await repository.find(body);
 
     taskRunner.addTasks([
       validators.hasUser({ user }),

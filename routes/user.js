@@ -24,9 +24,9 @@ const {
 } = require('../config/environment');
 
 module.exports = (app) => {
-  app.get('/api/signin',
-    requestValidation({ schema: requestSignIn, requestType: 'query' }),
-    crypto({ secret, requestType: 'query' }),
+  app.post('/api/signin',
+    requestValidation({ schema: requestSignIn, requestType: 'body' }),
+    crypto({ secret, requestType: 'body' }),
     signIn);
 
   app.post('/api/signup',
