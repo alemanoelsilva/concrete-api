@@ -1,12 +1,13 @@
-
-
 const { connect } = require('../../config/sequelize');
-const { db: { database, user, pass } } = require('../../config/environment');
 
 const init = async () => {
-  await connect({ database, user, pass });
-
-  // jest.setTimeout(30000);
+  try {
+    const connection = await connect();
+    if (connection.models.user && connection.models.user.destroy) {
+      await connection.models.user.destroy({ where: {} });
+    }
+    jest.setTimeout(300000);
+  } catch (error) {}
 };
 
 init();

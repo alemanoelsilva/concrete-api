@@ -1,58 +1,56 @@
-
-
 const request = require('supertest');
 
 const app = require('../../app')();
 
-exports.requestGet = async ({ url, query }) => request(app).get(url).query(query);
+const arrayObjectToSktring = array => JSON.stringify(array);
 
-exports.requestPost = async ({ url, body = '' }) => request(app).post(url).send(body);
+exports.requestGet = async ({ url, query, token = null }) => request(app)
+  .get(url)
+  .query(query)
+  .set(token ? { Authorization: `Bearer ${token}` } : null);
 
-exports.requestDelete = async ({ url, params = '' }) => request(app).delete(`${url}/${params}`);
+exports.requestPost = async ({ url, body = '' }) => request(app)
+  .post(url)
+  .send(body);
 
-exports.populateDataOnDB = async ({ data, model }) => {
+exports.populateDataOnDB = async ({ data: { phones, ...othersData }, model }) => {
   try {
-    return model.bulkCreate(data);
+    return model.create({
+      phones: arrayObjectToSktring(phones),
+      ...othersData,
+    });
   } catch (error) {
-    console.log('There is error on action callled', error);
+    console.log('There was error on action callled', error);
   }
 };
 
-exports.generateTools = [
-  {
-    id: '400117f1-1388-4eb9-a10f-c8b30e2b40b1',
-    title: 'Title 1',
-    link: 'Link 1',
-    description: 'Description 1',
-    tags: ['tag_1', 'tag_2'],
-    createdAt: new Date().toISOString(),
+exports.userMockOnDB = {
+  id: '400117f1-1388-4eb9-a10f-c8b30e2b40b1',
+  name: 'Alexandre',
+  email: 'email@gmail.com',
+  password: 'jndkejndkejndkejn',
+  phones: [{
+    number: 123123,
+    ddd: 33,
   }, {
-    id: '400117f1-1388-4eb9-a10f-c8b30e2b40b2',
-    title: 'Title 2',
-    link: 'Link 2',
-    description: 'Description 2',
-    tags: ['tag_3', 'tag_2'],
-    createdAt: new Date().toISOString(),
+    number: 123123,
+    ddd: 23,
+  }],
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+  lastLogin: new Date().toISOString(),
+  token: '419d1c0f-cd8a-47ea-a9ea-2665043189e7',
+};
+
+exports.userMock = {
+  name: 'Alexandre',
+  email: 'email@gmail.com',
+  password: 'jndkejndkejndkejn',
+  phones: [{
+    number: 123123,
+    ddd: 33,
   }, {
-    id: '400117f1-1388-4eb9-a10f-c8b30e2b40b3',
-    title: 'Title 3',
-    link: 'Link 3',
-    description: 'Description 3',
-    tags: ['tag_1', 'tag_4'],
-    createdAt: new Date().toISOString(),
-  }, {
-    id: '400117f1-1388-4eb9-a10f-c8b30e2b40b4',
-    title: 'Title 4',
-    link: 'Link 4',
-    description: 'Description 4',
-    tags: ['tag_4', 'tag_5'],
-    createdAt: new Date().toISOString(),
-  }, {
-    id: '400117f1-1388-4eb9-a10f-c8b30e2b40b5',
-    title: 'Title 5',
-    link: 'Link 5',
-    description: 'Description 5',
-    tags: ['tag_1', 'tag_4'],
-    createdAt: new Date().toISOString(),
-  },
-];
+    number: 123123,
+    ddd: 23,
+  }],
+};

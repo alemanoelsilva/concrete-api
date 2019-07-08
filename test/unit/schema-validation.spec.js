@@ -1,11 +1,8 @@
-
-
 const Joi = require('joi');
 
 const {
   requestValidation,
-  responseValidation,
-} = require('../../api/helpers/schema-validation');
+} = require('../../middlewares/schema-validation');
 
 describe('Handler Schema Validation Unit tests', () => {
   const mock = {
@@ -103,30 +100,6 @@ describe('Handler Schema Validation Unit tests', () => {
       expect(result.isJoi).toBeTruthy();
       expect(result.name).toEqual('ValidationError');
       expect(result.details[0].message).toEqual('"name" must be a number');
-    });
-  });
-
-  describe('Handler Response', () => {
-    test('Should execute response validation with success', async () => {
-      responseValidation(schema)(mock.request, mock.response, mock.next);
-
-      expect(mock.next).toHaveBeenCalledTimes(0);
-
-      expect(mock.response.status).toHaveBeenCalledTimes(1);
-    });
-
-    test('Should execute response validation with error', async () => {
-      const result = responseValidation(schema)(mock.request, { ...mock.response, data: { name: 1 } }, mock.next);
-
-      expect(mock.next).toHaveBeenCalledTimes(1);
-      expect(result).toBeDefined();
-
-      expect(mock.response.status).toHaveBeenCalledTimes(0);
-      expect(mock.response.status().json).toHaveBeenCalledTimes(0);
-
-      expect(result.isJoi).toBeTruthy();
-      expect(result.name).toEqual('ValidationError');
-      expect(result.details[0].message).toEqual('"name" must be a string');
     });
   });
 });

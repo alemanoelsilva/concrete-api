@@ -51,6 +51,6 @@ const User = getConnection().define('user', {
   timestamps: false,
 });
 
-User.sync();
+User.sync({ force: false });
 
 module.exports = User;

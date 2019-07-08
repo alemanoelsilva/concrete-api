@@ -12,11 +12,12 @@ async function init() {
     return null;
   }
 
+  /*eslint-disable */
   const app = require('./app')();
 
   await app.listen(port);
 
-  logger.info(`Application is running on port ${port}`);
-};
+  return logger.info(`Application is running on port ${port}`);
+}
 
 init();

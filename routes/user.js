@@ -27,18 +27,15 @@ module.exports = (app) => {
   app.get('/api/signin',
     requestValidation({ schema: requestSignIn, requestType: 'query' }),
     crypto({ secret, requestType: 'query' }),
-    signIn
-  );
+    signIn);
 
   app.post('/api/signup',
     requestValidation({ schema: requestSignUp, requestType: 'body' }),
     crypto({ secret, requestType: 'body' }),
-    signUp
-  );
+    signUp);
 
   app.get('/api/users/:id',
     requestValidation({ schema: requestUser, requestType: 'params' }),
     requestValidation({ schema: requestToken, requestType: 'headers' }),
-    search
-  );
+    search);
 };

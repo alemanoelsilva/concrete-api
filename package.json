@@ -4,14 +4,15 @@
   "description": "API for Concrete Challenge",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "npm run lint && node server.js",
     "dev": "node server.js",
     "test:coverage": "NODE_ENV=test jest --silent --runInBand --coverage --forceExit ./test/**/*.spec.js",
     "test:unit": "NODE_ENV=test jest --coverage --runInBand --forceExit ./test/unit/*.spec.js",
     "test:integration": "NODE_ENV=test jest --runInBand --coverage --forceExit ./test/integration/*.spec.js",
     "test": "npm run test:coverage",
     "lint": "eslint *.js .",
-    "lint:fix": "eslint --fix *.js ."
+    "lint:fix": "eslint --fix *.js .",
+    "build": "NODE_ENV=prod"
   },
   "author": "Alexandre Manoel da Silva",
   "license": "ISC",
@@ -24,7 +25,8 @@
     "joi": "^14.3.0",
     "moment": "^2.23.0",
     "sequelize": "^4.38.0",
-    "sqlite3": "^4.0.9"
+    "sqlite3": "^4.0.9",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
@@ -48,14 +50,6 @@
       "text-summary",
       "html"
     ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 80,
-        "functions": 80,
-        "lines": 80,
-        "statements": 80
-      }
-    },
     "setupFiles": [
       "jest-plugin-context/setup"
     ]

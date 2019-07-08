@@ -1,35 +1,35 @@
-
-
 const modelMock = {
-  create: jest.fn(),
-  destroy: jest.fn(),
-  findAll: jest.fn(() => ([{
+  create: jest.fn(() => {
+
+  }),
+  update: jest.fn(),
+  findOne: jest.fn(() => ({
     dataValues: {
-      id: '400117f1-1388-4eb9-a10f-c8b30e2b40b4',
-      title: 'Title',
-      link: 'Link',
-      description: 'Description',
-      tags: ['tag_1', 'tag_2'],
+      id: '400117f1-1388-4eb9-a10f-c8b30e2b40b1',
+      name: 'Alexandre',
+      email: 'email@gmail.com',
+      password: 'jndkejndkejndkejn',
+      phones: [{
+        number: 123123,
+        ddd: 33,
+      }, {
+        number: 123123,
+        ddd: 23,
+      }],
       createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      lastLogin: new Date().toISOString(),
+      token: '419d1c0f-cd8a-47ea-a9ea-2665043189e7',
     },
-  }, {
-    dataValues: {
-      id: '400117f1-1388-4eb9-a10f-c8b30e2b40b5',
-      title: 'Title 2',
-      link: 'Link 2',
-      description: 'Description 2',
-      tags: ['tag_2', 'tag_3'],
-      createdAt: new Date().toISOString(),
-    },
-  }])),
+  })),
 };
 
-const repository = require('../../api/tools/repository')(modelMock);
+const repository = require('../../api/users/repository')(modelMock);
 
-describe('Tools Repository Unit tests', () => {
+describe('User Repository Unit tests', () => {
   beforeEach(() => jest.clearAllMocks());
 
-  describe('Repository save tools', () => {
+  describe('Repository save user', () => {
     test('Should execute model.create function', async () => {
       await repository.save();
 
@@ -37,42 +37,21 @@ describe('Tools Repository Unit tests', () => {
     });
   });
 
-  describe('Repository get tools', () => {
-    test('Should execute model.findAll function and return all tools', async () => {
-      const { tools } = await repository.getAll({});
+  describe('Repository get user', () => {
+    test('Should execute model.findOne function', async () => {
+      const user = await repository.find({});
 
-      expect(tools[0].title).toEqual('Title');
-      expect(tools[1].title).toEqual('Title 2');
-      expect(tools.length).toEqual(2);
+      expect(user.name).toEqual('Alexandre');
 
-      expect(modelMock.findAll).toHaveBeenCalledTimes(1);
-    });
-
-    test('Should execute model.findAll function and return only one tool filtered by tag_1', async () => {
-      const { tools } = await repository.getAll({ tag: 'tag_1' });
-
-      expect(tools[0].title).toEqual('Title');
-      expect(tools.length).toEqual(1);
-
-      expect(modelMock.findAll).toHaveBeenCalledTimes(1);
-    });
-
-    test('Should execute model.findAll function and return only two tools filtered by tag_2', async () => {
-      const { tools } = await repository.getAll({ tag: 'tag_2' });
-
-      expect(tools[0].title).toEqual('Title');
-      expect(tools[1].title).toEqual('Title 2');
-      expect(tools.length).toEqual(2);
-
-      expect(modelMock.findAll).toHaveBeenCalledTimes(1);
+      expect(modelMock.findOne).toHaveBeenCalledTimes(1);
     });
   });
 
-  describe('Repository delete tools', () => {
-    test('Should execute model.destroy function', async () => {
-      await repository.delete({ id: '' });
+  describe('Repository update user', () => {
+    test('Should execute model.update function', async () => {
+      await repository.update({ id: '' });
 
-      expect(modelMock.destroy).toHaveBeenCalledTimes(1);
+      expect(modelMock.update).toHaveBeenCalledTimes(1);
     });
   });
 });

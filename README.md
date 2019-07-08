@@ -1,4 +1,4 @@
-# Configuration of application
+# Configuration
 
 ## To initialize the application. 
 
@@ -7,36 +7,35 @@
 ```
 NODE_ENV=development
 
-POSTGRES_DATABASE=bossabox
-POSTGRES_DATABASE_TEST=bossabox_test
-POSTGRES_USER=postgres
-POSTGRES_PASS=postgres123
-
 LOGGER_LEVEL=trace
 
 PORT=3000
+
+SECRET=my_secret_key
+
+SESSION_EXPIRED=30
+
+DATABASE=db/database.db
+DATABASE_TEST=db/database_test.db
+
+BACKUP_FILE_LOG=/log/concrete.log
 ```
 
-## Working with Postgres on Docker
+### Running on the app
 
-You will need of postgres image personalized, you must run `./build_postgres.sh`, after this, check your containers with `docker ps`. You can see the container postgres running.
-
-### Postgres - Basic Comands
-
-1. Connection on Docker
-
-```bash
-docker exec -it {{ container_name }} bash
-
-psql -h localhost -U postgres -W
-
-# password required
+```shell
+npm start
 ```
 
-2. Manipulating postgres database 
+### Running on the local unit and integration test 
 
+```shell
+npm run test:unit
+npm run test:integration
 ```
-\l --> to list of databases
-\c database_name --> to change of database
-\d --> to list of tables
+
+### Making the build on Heroku
+
+```shell
+npm run build
 ```

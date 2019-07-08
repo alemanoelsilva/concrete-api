@@ -10,13 +10,17 @@ const sequelizeDB = ({
   connect: async () => {
     if (connection) return connection;
 
+    logger.info(`Connecting on database ${database}`);
+
     try {
       connection = new Sequelize({
         dialect: 'sqlite',
         storage: path.join(path.resolve(), database),
+        operatorsAliases: Sequelize.Op,
+        logging: false,
       });
 
-      logger.info(`Database connected`);
+      logger.info('Database connected');
 
       return connection;
     } catch (error) {

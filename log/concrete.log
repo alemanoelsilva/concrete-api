@@ -5,3 +5,54 @@
 {"name":"concreteAPI","hostname":"ales-pro.local","pid":24233,"level":30,"msg":"Logging with user email@gmail.com","time":"2019-07-07T19:45:01.856Z","v":0}
 {"name":"concreteAPI","hostname":"ales-pro.local","pid":24233,"level":30,"msg":"Updating the lastLogin time","time":"2019-07-07T19:45:01.873Z","v":0}
 {"name":"concreteAPI","hostname":"ales-pro.local","pid":24233,"level":30,"msg":"Finding user by { id: '19e0f4b8-a28e-4f2a-be25-1f3fc47ddb17',\n  token: '419d1c0f-cd8a-47ea-a9ea-2665043189e7' }","time":"2019-07-07T19:45:03.619Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26740,"level":30,"msg":"Connecting on database db/database.db","time":"2019-07-08T01:59:02.263Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26740,"level":30,"msg":"Database connected","time":"2019-07-08T01:59:02.335Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26740,"level":30,"msg":"Application is running on port 3000","time":"2019-07-08T01:59:02.470Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26740,"level":30,"msg":"Creating user with { name: 'Alexandre',\n  email: 'semail@gmail.com',\n  password:\n   'e0164271adb0e8fbc41239ebc6dddf0bd9b9ae7ad4904e77ff2ea67acd433791',\n  phones: [ { number: 123123, ddd: 33 }, { number: 123123, ddd: 23 } ] }","time":"2019-07-08T01:59:19.575Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26740,"level":30,"msg":"Invalid email","time":"2019-07-08T01:59:19.595Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26740,"level":30,"msg":"Finding user by { id: '19e0f4b8-a28e-4f2a-be25-1f3fc47ddb17',\n  token: '419d1c0f-cd8a-47ea-a9ea-2665043189e7' }","time":"2019-07-08T01:59:25.252Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26740,"level":30,"msg":"Session expired","time":"2019-07-08T01:59:25.299Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26740,"level":30,"msg":"Logging with user email@gmail.com","time":"2019-07-08T01:59:28.174Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26740,"level":30,"msg":"Updating the lastLogin time","time":"2019-07-08T01:59:28.178Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26740,"level":30,"msg":"Logging with user email@gmail.com","time":"2019-07-08T01:59:32.371Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26740,"level":30,"msg":"Updating the lastLogin time","time":"2019-07-08T01:59:32.377Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26740,"level":30,"msg":"Finding user by { id: '19e0f4b8-a28e-4f2a-be25-1f3fc47ddb17',\n  token: '419d1c0f-cd8a-47ea-a9ea-2665043189e7' }","time":"2019-07-08T01:59:36.076Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26922,"level":30,"msg":"Connecting on database db/database.db","time":"2019-07-08T02:35:29.733Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26922,"level":30,"msg":"Database connected","time":"2019-07-08T02:35:29.909Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26922,"level":30,"msg":"Application is running on port 3000","time":"2019-07-08T02:35:30.175Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26922,"level":30,"msg":"Finding user by { id: '19e0f4b8-a28e-4f2a-be25-1f3fc47ddb17',\n  token: '419d1c0f-cd8a-47ea-a9ea-2665043189e7' }","time":"2019-07-08T02:35:48.962Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26922,"level":30,"msg":"Session expired","time":"2019-07-08T02:35:48.995Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26922,"level":30,"msg":"Finding user by { id: '19e0f4b8-a28e-4f2a-be25-1f3fc47ddb17',\n  token: '419d1c0f-cd8a-47ea-a9ea-2665043189e7' }","time":"2019-07-08T02:35:50.746Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26922,"level":30,"msg":"Session expired","time":"2019-07-08T02:35:50.754Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26922,"level":30,"msg":"Finding user by { id: '19e0f4b8-a28e-4f2a-be25-1f3fc47ddb17',\n  token: '419d1c0f-cd8a-47ea-a9ea-2665043189e7' }","time":"2019-07-08T02:35:51.645Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26922,"level":30,"msg":"Session expired","time":"2019-07-08T02:35:51.648Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26922,"level":30,"msg":"Finding user by { id: '19e0f4b8-a28e-4f2a-be25-1f3fc47ddb17',\n  token: '419d1c0f-cd8a-47ea-a9ea-2665043189e7' }","time":"2019-07-08T02:35:52.489Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":26922,"level":30,"msg":"Session expired","time":"2019-07-08T02:35:52.495Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":28166,"level":30,"msg":"Connecting on database db/database.db","time":"2019-07-08T03:20:14.794Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":28166,"level":30,"msg":"Database connected","time":"2019-07-08T03:20:14.875Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":28166,"level":30,"msg":"Application is running on port 3000","time":"2019-07-08T03:20:15.027Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":28166,"level":30,"msg":"Creating user with { name: 'Alexandre',\n  email: 'semail@gmail.com',\n  password:\n   'e0164271adb0e8fbc41239ebc6dddf0bd9b9ae7ad4904e77ff2ea67acd433791',\n  phones: [ { number: 123123, ddd: 33 }, { number: 123123, ddd: 23 } ] }","time":"2019-07-08T03:20:21.422Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":28166,"level":30,"msg":"Invalid email","time":"2019-07-08T03:20:21.455Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":28166,"level":30,"msg":"Creating user with { name: 'Alexandre',\n  email: 'semaitl@gmail.com',\n  password:\n   'e0164271adb0e8fbc41239ebc6dddf0bd9b9ae7ad4904e77ff2ea67acd433791',\n  phones: [ { number: 123123, ddd: 33 }, { number: 123123, ddd: 23 } ] }","time":"2019-07-08T03:20:26.069Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":28166,"level":30,"msg":"Finding user by { id: '19e0f4b8-a28e-4f2a-be25-1f3fc47ddb17',\n  token: '419d1c0f-cd8a-47ea-a9ea-2665043189e7' }","time":"2019-07-08T03:20:29.249Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":28166,"level":30,"msg":"Session expired","time":"2019-07-08T03:20:29.271Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":28166,"level":30,"msg":"Logging with user email@gmail.com","time":"2019-07-08T03:20:31.125Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":28166,"level":30,"msg":"Updating the lastLogin time","time":"2019-07-08T03:20:31.131Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":28166,"level":30,"msg":"Finding user by { id: '19e0f4b8-a28e-4f2a-be25-1f3fc47ddb17',\n  token: '419d1c0f-cd8a-47ea-a9ea-2665043189e7' }","time":"2019-07-08T03:20:34.539Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":29162,"level":30,"msg":"Connecting on database db/database.db","time":"2019-07-08T03:32:03.202Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":29162,"level":30,"msg":"Database connected","time":"2019-07-08T03:32:03.405Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":29162,"level":30,"msg":"Application is running on port 3000","time":"2019-07-08T03:32:03.704Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":29162,"level":30,"msg":"Creating user with { name: 'Alexandre',\n  email: 'semaitl@gmail.com',\n  password:\n   'e0164271adb0e8fbc41239ebc6dddf0bd9b9ae7ad4904e77ff2ea67acd433791',\n  phones: [ { number: 123123, ddd: 33 }, { number: 123123, ddd: 23 } ] }","time":"2019-07-08T03:34:07.666Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":29162,"level":30,"msg":"Invalid email","time":"2019-07-08T03:34:07.714Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":29162,"level":30,"msg":"Logging with user email@gmail.com","time":"2019-07-08T03:34:09.655Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":29162,"level":30,"msg":"Updating the lastLogin time","time":"2019-07-08T03:34:09.709Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":29162,"level":30,"msg":"Finding user by { id: '19e0f4b8-a28e-4f2a-be25-1f3fc47ddb17',\n  token: '419d1c0f-cd8a-47ea-a9ea-2665043189e7' }","time":"2019-07-08T03:34:11.209Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":30142,"level":30,"msg":"Connecting on database db/database.db","time":"2019-07-08T03:47:01.141Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":30142,"level":30,"msg":"Database connected","time":"2019-07-08T03:47:01.298Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":30142,"level":30,"msg":"Application is running on port 3000","time":"2019-07-08T03:47:01.477Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":30142,"level":30,"msg":"Finding user by { id: '19e0f4b8-a28e-4f2a-be25-1f3fc47ddb17',\n  token: '419d1c0f-cd8a-47ea-a9ea-2665043189e7' }","time":"2019-07-08T03:47:08.112Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":30142,"level":30,"msg":"Logging with user email@gmail.com","time":"2019-07-08T03:47:11.656Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":30142,"level":30,"msg":"Updating the lastLogin time","time":"2019-07-08T03:47:11.707Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":30142,"level":30,"msg":"Creating user with { name: 'Alexandre',\n  email: 'semaitl@gmail.com',\n  password:\n   'e0164271adb0e8fbc41239ebc6dddf0bd9b9ae7ad4904e77ff2ea67acd433791',\n  phones: [ { number: 123123, ddd: 33 }, { number: 123123, ddd: 23 } ] }","time":"2019-07-08T03:47:13.740Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":30142,"level":30,"msg":"Invalid email","time":"2019-07-08T03:47:13.757Z","v":0}
+{"name":"concreteAPI","hostname":"ales-pro.local","pid":30142,"level":30,"msg":"Creating user with { name: 'Alexandre',\n  email: 'sem naitl@gmail.com',\n  password:\n   'e0164271adb0e8fbc41239ebc6dddf0bd9b9ae7ad4904e77ff2ea67acd433791',\n  phones: [ { number: 123123, ddd: 33 }, { number: 123123, ddd: 23 } ] }","time":"2019-07-08T03:47:17.549Z","v":0}

@@ -1,23 +1,33 @@
-
-
 const {
-  getAllTools,
-  createTool,
-  deleteTool,
-} = require('../../api/tools/adapter');
+  login,
+  create,
+  find,
+} = require('../../api/users/adapter');
 
-describe('Tools Adapter Unit tests', () => {
+describe('User Adapter Unit tests', () => {
   const mocks = {
     query: '',
     params: '',
     body: '',
     repository: {
-      getAll: jest.fn(() => ({ tools: '', count: 1 })),
-      save: jest.fn(data => ({ ...data, id: '', createdAt: '' })),
-      delete: jest.fn(id => (id % 2 ? 1 : 0)),
+      find: jest.fn(() => ({ id: 'id' })),
+      save: jest.fn(),
+      updateLastLoginTime: jest.fn(),
+      findByID: jest.fn(),
     },
     formatters: {
+      payload: jest.fn(data => data),
       response: jest.fn(data => data),
+    },
+    taskRunner: {
+      addTasks: jest.fn(),
+      exec: jest.fn(),
+    },
+    validators: {
+      hasUser: jest.fn(),
+      duplicatedEmail: jest.fn(),
+      isValidToken: jest.fn(),
+      isValidSession: jest.fn(),
     },
     logger: {
       info: jest.fn(),
@@ -29,92 +39,43 @@ describe('Tools Adapter Unit tests', () => {
 
   beforeEach(() => jest.clearAllMocks());
 
-  describe('Get all tools', () => {
-    test('Should call the onSuccess Function with success', async () => {
-      await getAllTools(mocks);
+  describe('Run the login function', () => {
+    test('Should call the onSuccess Function', async () => {
+      await login(mocks);
 
-      expect(mocks.logger.info).toHaveBeenCalledTimes(1);
-      expect(mocks.repository.getAll).toHaveBeenCalledTimes(1);
-      expect(mocks.formatters.response).toHaveBeenCalledTimes(1);
+      expect(mocks.logger.info).toHaveBeenCalledTimes(2);
+      expect(mocks.repository.find).toHaveBeenCalledTimes(1);
+      expect(mocks.taskRunner.addTasks).toHaveBeenCalledTimes(1);
+      expect(mocks.taskRunner.exec).toHaveBeenCalledTimes(1);
+      expect(mocks.repository.updateLastLoginTime).toHaveBeenCalledTimes(1);
       expect(mocks.onSuccess).toHaveBeenCalledTimes(1);
       expect(mocks.onError).toHaveBeenCalledTimes(0);
     });
-
-    test('Should return error when getAll function was called', async () => {
-      await getAllTools({
-        ...mocks,
-        repository: {
-          getAll: () => { throw new Error('Error getAll'); },
-        },
-      });
-
-      expect(mocks.logger.info).toHaveBeenCalledTimes(1);
-      expect(mocks.formatters.response).toHaveBeenCalledTimes(0);
-      expect(mocks.onSuccess).toHaveBeenCalledTimes(0);
-      expect(mocks.onError).toHaveBeenCalledTimes(1);
-    });
-
-    test('Should return error when response formatter Function was called', async () => {
-      await getAllTools({
-        ...mocks,
-        formatters: {
-          response: () => { throw new Error('Error formattersResponse'); },
-        },
-      });
-
-      expect(mocks.logger.info).toHaveBeenCalledTimes(1);
-      expect(mocks.logger.error).toHaveBeenCalledTimes(1);
-      expect(mocks.repository.getAll).toHaveBeenCalledTimes(1);
-      expect(mocks.onSuccess).toHaveBeenCalledTimes(0);
-      expect(mocks.onError).toHaveBeenCalledTimes(1);
-    });
   });
 
-  describe('Create a tool', () => {
-    test('Should call the onSuccess Function with success', async () => {
-      await createTool(mocks);
+  describe('Run the create function', () => {
+    test('Should call the onSuccess Function', async () => {
+      await create(mocks);
 
       expect(mocks.logger.info).toHaveBeenCalledTimes(1);
+      expect(mocks.taskRunner.addTasks).toHaveBeenCalledTimes(1);
+      expect(mocks.taskRunner.exec).toHaveBeenCalledTimes(1);
       expect(mocks.repository.save).toHaveBeenCalledTimes(1);
       expect(mocks.onSuccess).toHaveBeenCalledTimes(1);
       expect(mocks.onError).toHaveBeenCalledTimes(0);
     });
-
-    test('Should return error when save Function was called', async () => {
-      await createTool({
-        ...mocks,
-        repository: {
-          save: () => { throw new Error('Error save'); },
-        },
-      });
-
-      expect(mocks.logger.error).toHaveBeenCalledTimes(1);
-      expect(mocks.onSuccess).toHaveBeenCalledTimes(0);
-      expect(mocks.onError).toHaveBeenCalledTimes(1);
-    });
   });
 
-  describe('Delete a tool', () => {
-    test('Should call the onSuccess Function with success', async () => {
-      await deleteTool(mocks);
+  describe('Run the search function', () => {
+    test('Should call the onSuccess Function', async () => {
+      await find(mocks);
 
       expect(mocks.logger.info).toHaveBeenCalledTimes(1);
-      expect(mocks.repository.delete).toHaveBeenCalledTimes(1);
+      expect(mocks.taskRunner.addTasks).toHaveBeenCalledTimes(1);
+      expect(mocks.taskRunner.exec).toHaveBeenCalledTimes(1);
+      expect(mocks.repository.findByID).toHaveBeenCalledTimes(1);
       expect(mocks.onSuccess).toHaveBeenCalledTimes(1);
       expect(mocks.onError).toHaveBeenCalledTimes(0);
-    });
-
-    test('Should return error when delete Function was called', async () => {
-      await deleteTool({
-        ...mocks,
-        repository: {
-          delete: () => { throw new Error('Error delete'); },
-        },
-      });
-
-      expect(mocks.logger.error).toHaveBeenCalledTimes(1);
-      expect(mocks.onSuccess).toHaveBeenCalledTimes(0);
-      expect(mocks.onError).toHaveBeenCalledTimes(1);
     });
   });
 });

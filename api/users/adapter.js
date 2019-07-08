@@ -64,7 +64,7 @@ exports.create = async ({
         statusCode: 400,
       });
     }
-    console.log('formatters.response(responseDB)', formatters.response(responseDB))
+
     return onSuccess({
       data: formatters.response(responseDB),
       statusCode: 201,

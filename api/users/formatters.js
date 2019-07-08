@@ -7,7 +7,7 @@ exports.formatterUserRequest = ({ arrayObjectToString }) => user => ({
 
 exports.formatterUserResponse = ({ moment, formatDate, stringToArrayObject }) => user => ({
   id: user.id,
-  //name: user.name,
+  name: user.name,
   email: user.email,
   password: user.password,
   phones: stringToArrayObject(user.phones),
