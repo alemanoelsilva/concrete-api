@@ -13,7 +13,7 @@
     "lint": "eslint *.js .",
     "lint:fix": "eslint --fix *.js .",
     "deploy": "npm test && git add . && git commit -m 'deploying' && git push origin master",
-    "build": "npm start"
+    "build": "webpack"
   },
   "author": "Alexandre Manoel da Silva",
   "license": "ISC",
