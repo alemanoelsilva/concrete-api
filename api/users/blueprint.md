@@ -144,22 +144,23 @@ This is API for manipulation of Users
     - token (string) - User token
 
   - Body
-    {
-    "id": "19e0f4b8-a28e-4f2a-be25-1f3fc47ddb17",
-    "email": "email@gmail.com",
-    "password": "e0164271adb0e8fbc41239ebc6dddf0bd9b9ae7ad4904e77ff2ea67acd433791",
-    "phones": [
-    {
-    "number": 123123,
-    "ddd": 33
-    },
-    {
-    "number": 123123,
-    "ddd": 23
-    }
-    ],
-    "createdAt": "July 5th 2019, 7:08:30 pm",
-    "updatedAt": "July 7th 2019, 4:45:01 pm",
-    "lastLogin": "July 7th 2019, 4:45:01 pm",
-    "token": "419d1c0f-cd8a-47ea-a9ea-2665043189e7"
-    }
+    
+          {
+            "id": "19e0f4b8-a28e-4f2a-be25-1f3fc47ddb17",
+            "email": "email@gmail.com",
+            "password": "e0164271adb0e8fbc41239ebc6dddf0bd9b9ae7ad4904e77ff2ea67acd433791",
+            "phones": [
+              {
+                "number": 123123,
+                "ddd": 33
+              },
+              {
+                "number": 123123,
+                "ddd": 23
+              }
+            ],
+            "createdAt": "July 5th 2019, 7:08:30 pm",
+            "updatedAt": "July 7th 2019, 4:45:01 pm",
+            "lastLogin": "July 7th 2019, 4:45:01 pm",
+            "token": "419d1c0f-cd8a-47ea-a9ea-2665043189e7"
+          }
