@@ -1,4 +1,5 @@
-exports.error = (error, request, response) => {
+/*eslint-disable */
+exports.error = (error, request, response, next) => {
   if (error.isJoi) {
     return response.status(400).json({
       message: error.details[0].message,
